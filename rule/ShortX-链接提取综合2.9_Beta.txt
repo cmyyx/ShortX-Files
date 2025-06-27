@@ -52,7 +52,7 @@
     "IfActions": [{
       "@type": "type.googleapis.com/ReplaceRegex",
       "string": "{clipboardContent}",
-      "regex": "\\{|\\}",
+      "regex": "\\{|\\}|`",
       "replacement": " ",
       "customContextDataKey": {
       },
@@ -445,7 +445,7 @@
     "id": "A-d9c08310-e819-4dd7-b3df-1358650537b1"
   }, {
     "@type": "type.googleapis.com/ExecuteJS",
-    "expression": "function isAppinstall(pkgName) {\n    var path \u003d \"/data/data/\"+pkgName;\n    var File \u003d java.io.File;\n    var dir \u003d new File(path);\n    return dir.exists() \u0026\u0026 dir.isDirectory();\n}\n\nfunction checkString(input,all) {\n    if (input.indexOf(\"m.tb.cn\") !\u003d\u003d -1\u0026\u0026all.indexOf(\"闲鱼\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.taobao.idlefish\")) {\n        return [\"fleamarket://2.taobao.com/onepiece?h5Url\u003d\"+input,\"app://com.taobao.idlefish\"];\n    } else if (input.indexOf(\"m.tb.cn\") !\u003d\u003d -1\u0026\u0026all.indexOf(\"淘宝\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.taobao.taobao\")) {\n        return [\"tbopen://m.taobao.com/tbopen/index.html?h5Url\u003d\"+input,\"taobao-fill\"];\n    } else if ((input.indexOf(\"3.cn\") !\u003d\u003d -1||input.indexOf(\"jd.com\") !\u003d\u003d -1)\u0026\u0026isAppinstall(\"com.jingdong.app.mall\")) {\n        return [\"openapp.jdmobile://virtual?params\u003d{\u0027category\u0027:\u0027jump\u0027,\u0027des\u0027:\u0027m\u0027,\u0027url\u0027:\u0027\"+input+\"\u0027}\",\"app://com.jingdong.app.mall\"];\n    }else if (input.indexOf(\"douyin.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.ss.android.ugc.aweme\")) {\n        return [\"snssdk1128://webview?url\u003d\"+input,\"tiktok-fill\"];\n    } else if (input.indexOf(\"mobile.yangkeduo.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.xunmeng.pinduoduo\")) {\n        return [\"pddopen://?h5Url\u003d\"+input,\"app://com.xunmeng.pinduoduo\"];\n    } else if (input.indexOf(\"pan.baidu.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.baidu.netdisk\")) {\n        if(input.indexOf(\"提取码\") !\u003d\u003d -1){\n        var dplink;\n        var dptqm;\n        dplink\u003dinput.split(\" 提取码:\")[0].split(\"/1\")[1];\n        dptqm \u003d input.split(\" 提取码:\")[1];\n        return [\"bdnetdisk://n/action.SHARE_LINK?m_n_v\u003d8.3.0\u0026surl\u003d\"+dplink+\"\u0026pwd\u003d\"+dptqm,\"baidu-line\"];}else{\n        dplink\u003dinput.split(\" 提取码:\")[0].split(\"/1\")[1].replace(\"?\",\"\u0026\");\n        return [\"bdnetdisk://n/action.SHARE_LINK?m_n_v\u003d8.3.0\u0026surl\u003d\"+dplink,\"baidu-line\"];}\n        \n    } else if ((input.indexOf(\"bilibili.com\") !\u003d\u003d -1||input.indexOf(\"bili33.cn\") !\u003d\u003d -1||input.indexOf(\"m.acg.tv\") !\u003d\u003d -1||input.indexOf(\"b23.cn\") !\u003d\u003d -1||input.indexOf(\"bilibili.cn\") !\u003d\u003d -1||input.indexOf(\"bilibili.tv\") !\u003d\u003d -1)\u0026\u0026isAppinstall(\"tv.danmaku.bili\")) {\n        return [\"bilibili://browser?url\u003d\"+input,\"bilibili-fill\"];\n    } else if (input.indexOf(\"zhihu.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.zhihu.android\")) {\n        var zhanswer;\n        var zhpsn;\n        zhanswer\u003dinput.split(\"/answer/\")[1].split(\"\\\\?\")[0];\n        zhpsn\u003dinput.split(\"\u0026utm_psn\u003d\")[1]\n        return [\"zhihu://answers/\"+zhanswer+\"?open\u003d1\u0026utm_psn\u003d\"+zhpsn,\"zhihu-line\"];\n    }else if (input.indexOf(\"alipan.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.alicloud.databox\")) {\n        var alypshareid;\n        var alyptqm;\n        alypshareid\u003dinput.split(\" 提取码:\")[0].split(\"/s/\")[1];\n        if(input.indexOf(\"提取码\") !\u003d\u003d -1){\n            alyptqm\u003dinput.split(\" 提取码:\")[1];\n        }else{alyptqm\u003d\"\";}\n        return [\"smartdrive://share/browse?shareId\u003d\"+alypshareid+\"\u0026sharePwd\u003d\"+alyptqm,\"app://com.alicloud.databox\"];\n    }  else if (input.indexOf(\"pan.quark.cn\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.quark.browser\")) {\n        return [\"qklink://www.uc.cn/b20b84fd735a8dd3f7541129bacc4e9a?action\u003dopen_url\u0026url\u003d\"+input,\"app://com.quark.browser\"];\n    } else if (input.indexOf(\"123pan.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.mfcloudcalculate.networkdisk\")) {\n        var yespanshareid;\n        var yespantqm;\n        yespanshareid\u003dinput.split(\" 提取码:\")[0].split(\"/s/\")[1];\n        if(input.indexOf(\"提取码\") !\u003d\u003d -1){\n            yespantqm\u003dinput.split(\" 提取码:\")[1];}else{yespantqm\u003d\"\";}\n        return [\"pan://umeng.com/share/list?sharePwd\u003d\"+yespantqm+\"\u0026_sdk_\u003dumeng\u0026action\u003dshare_list\u0026shareKey\u003d\"+yespanshareid,\"app://com.mfcloudcalculate.networkdisk\"];\n    } else if (input.indexOf(\"1688.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.alibaba.wireless\")) {\n        return [\"wireless1688://ma.m.1688.com/plugin?url\u003d\"+input,\"app://com.alibaba.wireless\"];\n    }else if (input.indexOf(\"coolapk.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.coolapk.market\")) {\n        return [input.replace(\"http\",\"coolmarket\").replace(\"https\",\"coolmarket\"),\"app://com.coolapk.market\"];\n    }  else if (input.indexOf(\"kurobbs.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.kurogame.kjq\")) {\n        var kjqpostid;\n        kjqpostid\u003dinput.split(\"\\\\?postId\u003d\")[1];\n        return [\"kjq://home/post/postDetail?postId\u003d\"+kjqpostid,\"app://com.kurogame.kjq\"];\n    }else if (input.indexOf(\"xhslink.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.xingin.xhs\")) {\n        return [\"xhsdiscover://item/6809ccfd000000001a007525?open_url\u003d\"+input,\"app://com.xingin.xhs\"];\n    }  else if (input.indexOf(\"tieba.baidu.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.baidu.tieba\")) {\n        var bdtbtid;\n        bdtbtid\u003dinput.split(\"\\\\?\")[0].split(\"/p/\")[1];\n        return [\"com.baidu.tieba://unidispatch/pb?tid\u003d\"+bdtbtid,\"app://com.baidu.tieba\"];\n    }else if (input.indexOf(\"kuaishou.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.smile.gifmaker\")) {\n        return [\"kwai://webview?url\u003d\"+input,\"app://com.smile.gifmaker\"];\n    }  else if (input.indexOf(\"weibo.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.sina.weibo\")) {\n        var xlwblinkpart;\n        var xlwbblogid;\n        xlwblinkpart\u003dinput.split(\"/\")\n        xlwbblogid\u003dxlwblinkpart[xlwblinkpart.length()-1];\n        return [\"sinaweibo://detail?mblogid\u003d\"+xlwbblogid,\"weibo-fill\"];\n    } else if (input.indexOf(\"dpurl.cn\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.sankuai.meituan\")) {\n        return [\"imeituan://www.meituan.com/web?notitlebar\u003d1\u0026url\u003d\"+input,\"app://com.sankuai.meituan\"];\n    } else if (input.indexOf(\"dpurl.cn\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.sankuai.meituan.takeoutnew\")) {\n        return [\"meituanwaimai://waimai.meituan.com/browser?inner_url\u003d\"+input,\"app://com.sankuai.meituan.takeoutnew\"];\n    }else if (input.indexOf(\"miyoushe.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.mihoyo.hyperion\")) {\n        return [\"mihoyobbs://webview?link\u003d\"+input,\"app://com.mihoyo.hyperion\"];\n    }  else {\n        return \"\"; // 未匹配\n    }\n}\n\nvar result;\nif({factTag}\u003d\u003d\"剪切板\"){\nresult\u003dcheckString({chooselink},{clipboardContent});}else{result\u003dcheckString({chooselink},{selectedText});}\n\nvar writeLocalVar \u003d Packages.tornaco.apps.shortx.core.proto.action.WriteLocalVar.newBuilder()\n                .setVarName(\"urlschame\")\n                .setValueAsString(result[0])\n                .build();\n            shortx.executeAction(writeLocalVar);\nresult[1];",
+    "expression": "function isAppinstall(pkgName) {\n    var path \u003d \"/data/data/\"+pkgName;\n    var File \u003d java.io.File;\n    var dir \u003d new File(path);\n    return dir.exists() \u0026\u0026 dir.isDirectory();\n}\n\nfunction checkString(input,all) {\n    if (input.indexOf(\"m.tb.cn\") !\u003d\u003d -1\u0026\u0026all.indexOf(\"闲鱼\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.taobao.idlefish\")) {\n        return [\"fleamarket://2.taobao.com/onepiece?h5Url\u003d\"+input,\"app://com.taobao.idlefish\"];\n    } else if (input.indexOf(\"m.tb.cn\") !\u003d\u003d -1\u0026\u0026all.indexOf(\"淘宝\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.taobao.taobao\")) {\n        return [\"tbopen://m.taobao.com/tbopen/index.html?h5Url\u003d\"+input,\"taobao-fill\"];\n    } else if ((input.indexOf(\"3.cn\") !\u003d\u003d -1||input.indexOf(\"jd.com\") !\u003d\u003d -1)\u0026\u0026isAppinstall(\"com.jingdong.app.mall\")) {\n        return [\"openapp.jdmobile://virtual?params\u003d{\u0027category\u0027:\u0027jump\u0027,\u0027des\u0027:\u0027m\u0027,\u0027url\u0027:\u0027\"+input+\"\u0027}\",\"app://com.jingdong.app.mall\"];\n    }else if (input.indexOf(\"douyin.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.ss.android.ugc.aweme\")) {\n        return [\"snssdk1128://webview?url\u003d\"+input,\"tiktok-fill\"];\n    } else if (input.indexOf(\"mobile.yangkeduo.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.xunmeng.pinduoduo\")) {\n        return [\"pddopen://?h5Url\u003d\"+input,\"app://com.xunmeng.pinduoduo\"];\n    } else if (input.indexOf(\"pan.baidu.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.baidu.netdisk\")) {\n        if(input.indexOf(\"提取码\") !\u003d\u003d -1){\n        var dplink;\n        var dptqm;\n        dplink\u003dinput.split(\" 提取码:\")[0].split(\"/1\")[1];\n        dptqm \u003d input.split(\" 提取码:\")[1];\n        return [\"bdnetdisk://n/action.SHARE_LINK?m_n_v\u003d8.3.0\u0026surl\u003d\"+dplink+\"\u0026pwd\u003d\"+dptqm,\"baidu-line\"];}else{\n        dplink\u003dinput.split(\" 提取码:\")[0].split(\"/1\")[1].replace(\"?\",\"\u0026\");\n        return [\"bdnetdisk://n/action.SHARE_LINK?m_n_v\u003d8.3.0\u0026surl\u003d\"+dplink,\"baidu-line\"];}\n        \n    } else if ((input.indexOf(\"bilibili.com\") !\u003d\u003d -1||input.indexOf(\"bili33.cn\") !\u003d\u003d -1||input.indexOf(\"m.acg.tv\") !\u003d\u003d -1||input.indexOf(\"b23.cn\") !\u003d\u003d -1||input.indexOf(\"bilibili.cn\") !\u003d\u003d -1||input.indexOf(\"bilibili.tv\") !\u003d\u003d -1)\u0026\u0026isAppinstall(\"tv.danmaku.bili\")) {\n        return [\"bilibili://browser?url\u003d\"+input,\"bilibili-fill\"];\n    } else if (input.indexOf(\"zhihu.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.zhihu.android\")) {\n        var zhanswer;\n        var zhpsn;\n        zhanswer\u003dinput.split(\"/answer/\")[1].split(\"\\\\?\")[0];\n        zhpsn\u003dinput.split(\"\u0026utm_psn\u003d\")[1]\n        return [\"zhihu://answers/\"+zhanswer+\"?open\u003d1\u0026utm_psn\u003d\"+zhpsn,\"zhihu-line\"];\n    }else if (input.indexOf(\"alipan.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.alicloud.databox\")) {\n        var alypshareid;\n        var alyptqm;\n        alypshareid\u003dinput.split(\" 提取码:\")[0].split(\"/s/\")[1];\n        if(input.indexOf(\"提取码\") !\u003d\u003d -1){\n            alyptqm\u003dinput.split(\" 提取码:\")[1];\n        }else{alyptqm\u003d\"\";}\n        return [\"smartdrive://share/browse?shareId\u003d\"+alypshareid+\"\u0026sharePwd\u003d\"+alyptqm,\"app://com.alicloud.databox\"];\n    }  else if (input.indexOf(\"pan.quark.cn\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.quark.browser\")) {\n        return [\"qklink://www.uc.cn/b20b84fd735a8dd3f7541129bacc4e9a?action\u003dopen_url\u0026url\u003d\"+input,\"app://com.quark.browser\"];\n    } else if (input.indexOf(\"123pan.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.mfcloudcalculate.networkdisk\")) {\n        var yespanshareid;\n        var yespantqm;\n        yespanshareid\u003dinput.split(\" 提取码:\")[0].split(\"/s/\")[1];\n        if(input.indexOf(\"提取码\") !\u003d\u003d -1){\n            yespantqm\u003dinput.split(\" 提取码:\")[1];}else{yespantqm\u003d\"\";}\n        return [\"pan://umeng.com/share/list?sharePwd\u003d\"+yespantqm+\"\u0026_sdk_\u003dumeng\u0026action\u003dshare_list\u0026shareKey\u003d\"+yespanshareid,\"app://com.mfcloudcalculate.networkdisk\"];\n    } else if (input.indexOf(\"1688.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.alibaba.wireless\")) {\n        return [\"wireless1688://ma.m.1688.com/plugin?url\u003d\"+input,\"app://com.alibaba.wireless\"];\n    }else if (input.indexOf(\"coolapk.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.coolapk.market\")) {\n        return [input.replace(\"http\",\"coolmarket\").replace(\"https\",\"coolmarket\"),\"app://com.coolapk.market\"];\n    }  else if (input.indexOf(\"kurobbs.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.kurogame.kjq\")) {\n        var kjqpostid;\n        kjqpostid\u003dinput.split(\"\\\\?postId\u003d\")[1];\n        return [\"kjq://home/post/postDetail?postId\u003d\"+kjqpostid,\"app://com.kurogame.kjq\"];\n    }else if (input.indexOf(\"xhslink.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.xingin.xhs\")) {\n        return [\"xhsdiscover://item/6809ccfd000000001a007525?open_url\u003d\"+input,\"app://com.xingin.xhs\"];\n    }  else if (input.indexOf(\"tieba.baidu.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.baidu.tieba\")) {\n        var bdtbtid;\n        bdtbtid\u003dinput.split(\"\\\\?\")[0].split(\"/p/\")[1];\n        return [\"com.baidu.tieba://unidispatch/pb?tid\u003d\"+bdtbtid,\"app://com.baidu.tieba\"];\n    }else if (input.indexOf(\"kuaishou.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.smile.gifmaker\")) {\n        return [\"kwai://webview?url\u003d\"+input,\"app://com.smile.gifmaker\"];\n    }  else if (input.indexOf(\"weibo.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.sina.weibo\")) {\n        var xlwblinkpart;\n        var xlwbblogid;\n        xlwblinkpart\u003dinput.split(\"/\")\n        xlwbblogid\u003dxlwblinkpart[xlwblinkpart.length()-1];\n        return [\"sinaweibo://detail?mblogid\u003d\"+xlwbblogid,\"weibo-fill\"];\n    } else if (input.indexOf(\"dpurl.cn\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.sankuai.meituan\")) {\n        return [\"imeituan://www.meituan.com/web?notitlebar\u003d1\u0026url\u003d\"+input,\"app://com.sankuai.meituan\"];\n    } else if (input.indexOf(\"dpurl.cn\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.sankuai.meituan.takeoutnew\")) {\n        return [\"meituanwaimai://waimai.meituan.com/browser?inner_url\u003d\"+input,\"app://com.sankuai.meituan.takeoutnew\"];\n    }else if (input.indexOf(\"miyoushe.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.mihoyo.hyperion\")) {\n        return [\"mihoyobbs://webview?link\u003d\"+input,\"app://com.mihoyo.hyperion\"];\n    } else if (input.indexOf(\"115cdn.com\") !\u003d\u003d -1\u0026\u0026isAppinstall(\"com.yyw.wangpan\")) {\n        var yywlink;\n        var yywtqm;\n        yywlink\u003dinput.split(\" 提取码:\")[0];\n        yywtqm\u003dinput.split(\" 提取码:\")[1];\n        if(input.indexOf(\"?password\") !\u003d\u003d -1){\n            return [\"oof.disk://openurl/\"+yywlink,\"app://com.yyw.wangpan\"];}else{\n            return [\"oof.disk://openurl/\"+yywlink+\"?password\u003d\"+yywtqm,\"app://com.yyw.wangpan\"];\n            }\n    }  else {\n        return \"\"; // 未匹配\n    }\n}\n\nvar result;\nif({factTag}\u003d\u003d\"剪切板\"){\nresult\u003dcheckString({chooselink},`{clipboardContent}`);}else{result\u003dcheckString({chooselink},`{selectedText}`);}\n\nvar writeLocalVar \u003d Packages.tornaco.apps.shortx.core.proto.action.WriteLocalVar.newBuilder()\n                .setVarName(\"urlschame\")\n                .setValueAsString(result[0])\n                .build();\n            shortx.executeAction(writeLocalVar);\nresult[1];",
     "customContextDataKey": {
       "keys": [{
         "first": "jsRet",
@@ -531,97 +531,16 @@
     "note": "默认响应控制",
     "id": "A-980a480d-e5d1-44ba-9057-4d3a05bf238e"
   }, {
-    "@type": "type.googleapis.com/IfThenElse",
-    "If": [{
-      "@type": "type.googleapis.com/EvaluateContextVar",
-      "op": "Contains",
-      "varName": "chooselink",
-      "payload": {
-        "value": "提取码:"
-      },
-      "customContextDataKey": {
-      },
-      "id": "C-d8e2b980-1cc6-43fc-8065-a46020a9e6a4"
-    }, {
-      "@type": "type.googleapis.com/EvaluateContextVar",
-      "op": "DoesNotContain",
-      "varName": "打开方式",
-      "payload": {
-        "value": "跳转"
-      },
-      "customContextDataKey": {
-      },
-      "id": "C-4e952dbc-7f4a-4e03-b582-2059c7f2fbe4"
-    }, {
-      "@type": "type.googleapis.com/EvaluateContextVar",
-      "op": "DoesNotContain",
-      "varName": "打开方式",
-      "payload": {
-        "value": "取消"
-      },
-      "customContextDataKey": {
-      },
-      "id": "C-4d019ab8-3e17-4e5c-8e08-2bc825716f36"
-    }],
-    "IfActions": [{
-      "@type": "type.googleapis.com/CreateLocalVar",
-      "localVar": {
-        "name": "link",
-        "type": {
-          "@type": "type.googleapis.com/StringVar"
-        }
-      },
-      "customContextDataKey": {
-      },
-      "id": "A-7f83b9c9-7a1c-4f5d-8e52-9fa42711194a"
-    }, {
-      "@type": "type.googleapis.com/WriteLocalVar",
-      "varName": "link",
-      "valueAsString": "{chooselink}",
-      "customContextDataKey": {
-      },
-      "id": "A-36856aa9-895c-431a-941a-01b05a8f5820"
-    }, {
-      "@type": "type.googleapis.com/ExecuteMVEL",
-      "expression": "text \u003d localVarOf$link;\ncount \u003d text.split(\" 提取码:\")[1]",
-      "customContextDataKey": {
-        "keys": [{
-          "first": "mvelRet",
-          "second": "tqm"
-        }]
-      },
-      "id": "A-e59b1cb9-717e-4766-858b-9ac500c1ecdb"
-    }, {
-      "@type": "type.googleapis.com/ExecuteMVEL",
-      "expression": "text \u003d localVarOf$link;\ncount \u003d text.split(\" 提取码:\")[0]",
-      "customContextDataKey": {
-        "keys": [{
-          "first": "mvelRet",
-          "second": "nextlink"
-        }]
-      },
-      "id": "A-e9b85f98-a39e-42d1-9760-f4aa7bc5fe5f"
-    }, {
-      "@type": "type.googleapis.com/WriteClipboard",
-      "text": "{tqm}",
-      "customContextDataKey": {
-      },
-      "id": "A-01dc8407-f353-4474-a2c9-01098d9d2f84"
-    }],
-    "ElseActions": [{
-      "@type": "type.googleapis.com/ExecuteMVEL",
-      "expression": "text\u003d{chooselink};\ntext;",
-      "customContextDataKey": {
-        "keys": [{
-          "first": "mvelRet",
-          "second": "nextlink"
-        }]
-      },
-      "id": "A-ae2c2f16-615c-4564-b111-b2e50b5d2459"
-    }],
+    "@type": "type.googleapis.com/ExecuteJS",
+    "expression": "importClass(Packages.tornaco.apps.shortx.core.proto.action.WriteClipboard);\nif ({chooselink}.indexOf(\"提取码\") !\u003d\u003d -1\u0026\u0026{打开方式}.indexOf(\"跳转\") \u003d\u003d\u003d -1\u0026\u0026{打开方式}.indexOf(\"取消\") \u003d\u003d\u003d -1){\nvar link;\nlink\u003d{chooselink}.split(\" 提取码:\")\nvar action \u003d WriteClipboard.newBuilder()\n    .setText(link[1])\n    .build();\nshortx.executeAction(action);\nlink[0];\n}else{\n{chooselink};\n}",
     "customContextDataKey": {
+      "keys": [{
+        "first": "jsRet",
+        "second": "nextlink"
+      }]
     },
-    "id": "A-ae7d5c78-c9b8-4f3a-8d64-28f19dbc3d0b"
+    "note": "复制提取码",
+    "id": "A-9397b010-9b7b-4623-a14e-d3d8f29e1d7e"
   }, {
     "@type": "type.googleapis.com/SwitchCase",
     "case": [{
@@ -803,13 +722,13 @@
     },
     "id": "A-aa622a08-3953-4346-8bf7-2c9d4b61cbbd"
   }],
-  "id": "SHARE-rule-392158c3-4a6e-44df-9106-78e3bc051aba",
-  "lastUpdateTime": "1751046501977",
+  "id": "SHARE-rule-3ece2caa-d7f1-4ede-baa8-30205da37b9c",
+  "lastUpdateTime": "1751049073704",
   "createTime": "1723386652518",
   "author": {
     "name": "nyehueh"
   },
-  "title": "链接提取综合2.8 Beta",
+  "title": "链接提取综合2.9 Beta",
   "description": "高自定义的链接快速打开指令",
   "isEnabled": true,
   "hook": {
