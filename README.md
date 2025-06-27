@@ -2,7 +2,7 @@
 
 这是ShortX发现页面的在线指令数据仓库，指令更新时，通过Github Action自动创建PR更新Index文件。
 
-[![Update index](https://github.com/ShortX-Repo/ShortX-Files/actions/workflows/update_index.yml/badge.svg)](https://github.com/ShortX-Repo/ShortX-Files/actions/workflows/update_index.yml)
+[![Update index](https://github.com/cmyyx/ShortX-Files/actions/workflows/update_index.yml/badge.svg)](https://github.com/cmyyx/ShortX-Files/actions/workflows/update_index.yml)
 
 
 ## 如何贡献
@@ -64,12 +64,20 @@
 2. 给一些动作添加备注
 
 
-## Fork github 仓库
+## Fork 本仓库并开启自动更新
 
-如果你想直接Fork本仓库使用，需要简单配置一下Github Action需要的`token`，否则无法自动创建Index更新的PR。步骤如下：
+如果你想拥有自己独立的在线指令仓库，可以直接 Fork 本仓库。
 
-1. 前往Github设置，**Developer Settings**，**Personal access tokens**，点击**Tokens(Classic)**，点击**Generate new token**，token权限要选中 repo 和 workflow ，生成一个token，复制到剪贴板。
-2. 进入自己Fork的仓库，点击**Settings**，最下方有**Secrets and Variales**，选择其中的**Actions**，创建一个Secret，名字为PAT，值为刚才复制的token。
-3. 完成
+得益于最新的 Github Action 配置，你无需进行任何额外设置。Fork 之后，仓库内的 Action 已经拥有足够的权限来自动处理更新。
+(***记得手动开启仓库的 Action,fork仓库默认关闭***)
 
-这样操作的目的是给Github Action权限，可以自动生成commits和PR。
+**工作流程如下：**
+
+1.  将你制作或修改的指令文件推送到 Fork 后的仓库的 `main` 分支。
+2.  Github Action 将会自动被触发。
+3.  Action 会根据你的文件变更，创建一个用于更新 `index.json` 的 Pull Request。
+4.  该 Pull Request 会被**自动合并**。
+
+整个过程全自动，无需手动创建 Personal Access Token (PAT) 或进行其他设置。
+
+**也许你还需要更新一下README中的两个链接(修改用户名为你的即可)**
