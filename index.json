@@ -652,17 +652,6 @@
       "requireMinShortXProtoVersion": 0
     },
     {
-      "id": "SHARE-rule-60fe44b9-7b7c-4483-8fae-24ed84741c6d",
-      "fileUrl": "ShortX-链接提取综合2.7_Beta.txt",
-      "title": "链接提取综合2.7 Beta",
-      "description": "高自定义的链接快速打开指令",
-      "versionCode": 1,
-      "updateTimeMillis": 1751025674320,
-      "author": "nyehueh",
-      "tags": [],
-      "requireMinShortXProtoVersion": 0
-    },
-    {
       "id": "SHARE-rule-502e006a-285f-4890-906b-279d1c70e0bc",
       "fileUrl": "ShortX-自动开启USB网络共享.txt",
       "title": "自动开启USB网络共享",
@@ -703,6 +692,17 @@
       "versionCode": 0,
       "updateTimeMillis": 1689907916958,
       "author": "ShortX",
+      "tags": [],
+      "requireMinShortXProtoVersion": 0
+    },
+    {
+      "id": "SHARE-rule-392158c3-4a6e-44df-9106-78e3bc051aba",
+      "fileUrl": "ShortX-链接提取综合2.8_Beta.txt",
+      "title": "链接提取综合2.8 Beta",
+      "description": "高自定义的链接快速打开指令",
+      "versionCode": 1,
+      "updateTimeMillis": 1751046501977,
+      "author": "nyehueh",
       "tags": [],
       "requireMinShortXProtoVersion": 0
     },
