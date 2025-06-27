@@ -51,6 +51,13 @@ jobs:
         body: |
             Update index
             - Updated with latest files
-        assignees: tornaco
-        reviewers: tornaco
+        assignees: ${{ github.repository_owner }}
+        reviewers: ${{ github.repository_owner }}
         draft: false
+    - name: Enable auto-merge for PR
+      if: steps.cpr.outputs.pull-request-number != ''
+      uses: peter-evans/enable-pull-request-automerge@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+        merge-method: squash
