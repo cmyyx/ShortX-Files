@@ -22,6 +22,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[Index]')"
 
     steps:
     - uses: actions/checkout@v3
@@ -43,8 +44,8 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update index
-        committer: ${{ github.repository_owner }} <${{ github.repository_owner }}@users.noreply.github.com>
-        author: ${{ github.repository_owner }} <${{ github.repository_owner }}@users.noreply.github.com>
+        committer: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
+        author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
         signoff: false
         delete-branch: true
         title: '[Index] Update index'
