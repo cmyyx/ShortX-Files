@@ -43,8 +43,8 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Update index
-        committer: GitHub <noreply@github.com>
-        author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+        committer: ${{ github.repository_owner }} <${{ github.repository_owner }}@users.noreply.github.com>
+        author: ${{ github.repository_owner }} <${{ github.repository_owner }}@users.noreply.github.com>
         signoff: false
         delete-branch: true
         title: '[Index] Update index'
