@@ -166,6 +166,17 @@
       "requireMinShortXProtoVersion": 0
     },
     {
+      "id": "SHARED-DA-24770123-feac-473a-8782-53f7c29be96c",
+      "fileUrl": "ShortX-前台小窗3.0.txt",
+      "title": "前台小窗3.0",
+      "description": "该指令由酷安@落羽123制作，最初原代码来自酷安@hellocommi@成天睡觉，转发分享请标明出处，使用前必须确认WindowingMode值",
+      "versionCode": 1,
+      "updateTimeMillis": 1751018596736,
+      "author": "ShortX",
+      "tags": [],
+      "requireMinShortXProtoVersion": 0
+    },
+    {
       "id": "DA6a7e3cd1-1325-415e-b18c-76c936174879",
       "fileUrl": "ShortX-获取上一格电的使用情况.txt",
       "title": "获取上一格电的使用情况",
