@@ -696,17 +696,6 @@
       "requireMinShortXProtoVersion": 0
     },
     {
-      "id": "SHARE-rule-392158c3-4a6e-44df-9106-78e3bc051aba",
-      "fileUrl": "ShortX-链接提取综合2.8_Beta.txt",
-      "title": "链接提取综合2.8 Beta",
-      "description": "高自定义的链接快速打开指令",
-      "versionCode": 1,
-      "updateTimeMillis": 1751046501977,
-      "author": "nyehueh",
-      "tags": [],
-      "requireMinShortXProtoVersion": 0
-    },
-    {
       "id": "SHARE-rule-4785edbc-0df6-45e5-887c-134b954ad024",
       "fileUrl": "ShortX-支付宝收能量_劫富济贫_.txt",
       "title": "支付宝收能量（劫富济贫）",
@@ -769,6 +758,17 @@
       "versionCode": 1,
       "updateTimeMillis": 1696671000566,
       "author": "Sydney2580",
+      "tags": [],
+      "requireMinShortXProtoVersion": 0
+    },
+    {
+      "id": "SHARE-rule-3ece2caa-d7f1-4ede-baa8-30205da37b9c",
+      "fileUrl": "ShortX-链接提取综合2.9_Beta.txt",
+      "title": "链接提取综合2.9 Beta",
+      "description": "高自定义的链接快速打开指令",
+      "versionCode": 1,
+      "updateTimeMillis": 1751049073704,
+      "author": "nyehueh",
       "tags": [],
       "requireMinShortXProtoVersion": 0
     },
