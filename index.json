@@ -34,6 +34,17 @@
       "requireMinShortXProtoVersion": 0
     },
     {
+      "id": "SHARED-DA-1b1fd31d-611d-443b-8a1b-777b521db10c",
+      "fileUrl": "ShortX-小米社区微信小程序签到_v1.1.txt",
+      "title": "小米社区微信小程序签到 v1.1",
+      "description": "",
+      "versionCode": 1,
+      "updateTimeMillis": 1747037381916,
+      "author": "璨梦踏月",
+      "tags": [],
+      "requireMinShortXProtoVersion": 0
+    },
+    {
       "id": "SHARED-DA-2e643ec8-a8fb-48d7-9aa0-7084670672f5",
       "fileUrl": "ShortX-Shortcuts_快捷方式.txt",
       "title": "Shortcuts(快捷方式",
