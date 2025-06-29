@@ -421,17 +421,6 @@
       "requireMinShortXProtoVersion": 0
     },
     {
-      "id": "SHARE-rule-c1dc5fbd-771a-413f-bb45-82dd47514cda",
-      "fileUrl": "ShortX-链接提取综合3.2_Beta.txt",
-      "title": "链接提取综合3.2 Beta",
-      "description": "高自定义的链接快速打开指令",
-      "versionCode": 1,
-      "updateTimeMillis": 1751107049917,
-      "author": "nyehueh",
-      "tags": [],
-      "requireMinShortXProtoVersion": 0
-    },
-    {
       "id": "lingshang-powerpanel",
       "fileUrl": "ShortX-电源面板.txt",
       "title": "电源面板",
@@ -450,6 +439,17 @@
       "versionCode": 1,
       "updateTimeMillis": 1750577174928,
       "author": "ShortX",
+      "tags": [],
+      "requireMinShortXProtoVersion": 0
+    },
+    {
+      "id": "SHARE-rule-606f837b-3e8b-4d81-93a3-b3813740a9a2",
+      "fileUrl": "ShortX-链接提取综合3.3_Beta.txt",
+      "title": "链接提取综合3.3 Beta",
+      "description": "高自定义的链接快速打开指令",
+      "versionCode": 1,
+      "updateTimeMillis": 1751170401200,
+      "author": "nyehueh",
       "tags": [],
       "requireMinShortXProtoVersion": 0
     },
