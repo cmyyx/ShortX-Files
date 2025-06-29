@@ -531,6 +531,17 @@
       "requireMinShortXProtoVersion": 0
     },
     {
+      "id": "SHARE-rule-12be0d4d-5a17-4337-aa80-a42b0b5cefa1",
+      "fileUrl": "ShortX-链接流体云0.0.4_Beta.txt",
+      "title": "链接流体云0.0.4 Beta",
+      "description": "复制和选择链接时显示流体云",
+      "versionCode": 1,
+      "updateTimeMillis": 1751208498576,
+      "author": "nyehueh",
+      "tags": [],
+      "requireMinShortXProtoVersion": 0
+    },
+    {
       "id": "SHARE-rule-55022862-2e39-4dfb-a6ba-4ec202a41964",
       "fileUrl": "ShortX-验证码提取综合.txt",
       "title": "验证码提取综合",
@@ -769,6 +780,17 @@
       "versionCode": 1,
       "updateTimeMillis": 1749535430232,
       "author": "nyehueh",
+      "tags": [],
+      "requireMinShortXProtoVersion": 0
+    },
+    {
+      "id": "SHARE-rule-cee362ca-88b1-4541-942a-09c4ead78242",
+      "fileUrl": "ShortX-网卡连接图标.txt",
+      "title": "网卡连接图标",
+      "description": "",
+      "versionCode": 1,
+      "updateTimeMillis": 1751208781576,
+      "author": "lanyi233",
       "tags": [],
       "requireMinShortXProtoVersion": 0
     },
