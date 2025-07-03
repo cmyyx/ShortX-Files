@@ -344,17 +344,6 @@
       "requireMinShortXProtoVersion": 0
     },
     {
-      "id": "SHARE-rule-1b38870e-a9a8-455f-9a1f-9e561b70b264",
-      "fileUrl": "ShortX-链接流体云0.0.9_Beta.txt",
-      "title": "链接流体云0.0.9 Beta",
-      "description": "复制和选择链接时显示流体云",
-      "versionCode": 1,
-      "updateTimeMillis": 1751390618993,
-      "author": "nyehueh",
-      "tags": [],
-      "requireMinShortXProtoVersion": 0
-    },
-    {
       "id": "rule-8f1a5a71-6a0a-4371-8259-22fe2da7b369",
       "fileUrl": "ShortX-恋爱辅助.txt",
       "title": "恋爱辅助",
@@ -428,6 +417,17 @@
       "versionCode": 1,
       "updateTimeMillis": 1708495200370,
       "author": "源梦",
+      "tags": [],
+      "requireMinShortXProtoVersion": 0
+    },
+    {
+      "id": "SHARE-rule-4b3cfe4e-7a76-49f9-b0e8-9f36ce9fef7c",
+      "fileUrl": "ShortX-链接流体云1.5.txt",
+      "title": "链接流体云1.5",
+      "description": "复制和选择链接时显示流体云",
+      "versionCode": 1,
+      "updateTimeMillis": 1751485161324,
+      "author": "nyehueh",
       "tags": [],
       "requireMinShortXProtoVersion": 0
     },
